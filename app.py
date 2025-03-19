@@ -56,11 +56,8 @@ def agregar_al_carrito():
 
     return jsonify({"mensaje": "Producto agregado al carrito", "carrito": session['carrito']}), 200
 
-# -----------------------
-# CONFIGURACIÓN PARA RENDER
-# -----------------------
 import os
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))  # Railway asigna el puerto 5000
+    port = int(os.environ.get("PORT", 5000))  
     app.run(host="0.0.0.0", port=port, debug=False)
