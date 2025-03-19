@@ -56,5 +56,11 @@ def agregar_al_carrito():
 
     return jsonify({"mensaje": "Producto agregado al carrito", "carrito": session['carrito']}), 200
 
+# -----------------------
+# CONFIGURACIÓN PARA RENDER
+# -----------------------
+import os
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Render asigna un puerto dinámico
+    app.run(host="0.0.0.0", port=port, debug=False)  # Debug False para producción
