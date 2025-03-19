@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promelab - Tienda Virtual</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Logo Promelab" class="logo">
+        <div class="titulo">
+            <h1>Promelab</h1>
+            <p>Calidad y Confianza a tu servicio</p>
+        </div>
+    </header>
+    
+    <!-- Navegación -->
+    <nav>
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/productos">Productos</a></li>
+            <li class="dropdown">
+                <a href="#">Categorías ▼</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/productos?categoria=laboratorio">🧪 Material de Laboratorio</a></li>
+                    <li><a href="/productos?categoria=medico">🏥 Material Médico</a></li>
+                    <li><a href="/productos?categoria=diabetico">💉 Material para Diabéticos</a></li>
+                </ul>
+            </li>
+            <li><a href="/carrito">🛒 Ver Carrito</a></li>
+            <li>
+                <a href="https://wa.me/51930286436" target="_blank">
+                    <img src="{{ url_for('static', filename='whatsapp-icon.png') }}" alt="WhatsApp" class="whatsapp-icon"> WhatsApp
+                </a>
+            </li>
+        </ul>
+        <label for="search">Buscar productos:</label>
+        <input type="text" id="search" placeholder="Buscar productos...">
+    </nav>
+
+    <!-- Sección de productos -->
+    <section class="productos">
+        <h2>Nuestros Productos</h2>
+        <div class="producto">
+            <h3>Producto 1</h3>
+            <p>Descripción del producto 1.</p>
+            <p>Precio: S/ 50.00</p>
+            <button onclick="agregarAlCarrito('Producto 1', 50)">Añadir al Carrito</button>
+        </div>
+
+        <div class="producto">
+            <h3>Producto 2</h3>
+            <p>Descripción del producto 2.</p>
+            <p>Precio: S/ 80.00</p>
+            <button onclick="agregarAlCarrito('Producto 2', 80)">Añadir al Carrito</button>
+        </div>
+    </section>
+
+    <!-- Carrito de compras -->
+    <section class="carrito">
+        <h2>Carrito de Compras</h2>
+        <ul id="carrito-contenido"></ul>
+        <p>Total: <span id="total-carrito">S/ 0.00</span></p>
+    </section>
+
+</body>
+</html>

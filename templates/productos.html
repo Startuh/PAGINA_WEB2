@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Promelab</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>Productos en {{ categoria }}</h1>
+        <a href="/">🏠 Volver a inicio</a>
+        <a href="/carrito">🛒 Ver Carrito</a>
+    </header>
+
+    <section class="productos">
+        {% if productos %}
+            {% for producto in productos %}
+            <div class="producto">
+                <h3>{{ producto.nombre }}</h3>
+                <p>Descripción: {{ producto.descripcion }}</p>
+                <p><strong>Precio: S/ {{ producto.precio }}</strong></p>
+                <button onclick="agregarAlCarrito('{{ producto.nombre }}', parseFloat('{{ producto.precio }}'))">
+                    🛒 Añadir al Carrito
+                </button>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>No hay productos disponibles en esta categoría.</p>
+        {% endif %}
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff; /* Fondo blanco */
+    color: #000; /* Texto negro */
+    text-align: center;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #000; /* Encabezado negro */
+    color: white;
+}
+
+.logo {
+    width: 120px;  
+    height: auto;  
+    margin-right: 15px;
+}
+
+.titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.titulo h1 {
+    color: #ffffff; 
+    margin: 0;
+}
+
+.titulo p {
+    color: rgb(255, 254, 254);
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Alineación vertical */
+    background: #222;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+    align-items: center; /* Alineación vertical */
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos del menú desplegable */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: #333;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    border-radius: 5px;
+}
+
+.dropdown-menu li {
+    border-bottom: 1px solid #444;
+}
+
+.dropdown-menu li a {
+    padding: 10px;
+    display: block;
+    color: white;
+}
+
+.dropdown-menu li a:hover {
+    background: #444;
+}
+
+/* Mostrar el menú cuando el usuario pasa el cursor */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Estilos del icono de WhatsApp */
+.whatsapp-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}

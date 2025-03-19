@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>🛒 Carrito de Compras</h1>
+        <a href="/">Volver a inicio</a>
+        <a href="/productos">Seguir comprando</a>
+    </header>
+
+    <section>
+        <h2>Productos en tu carrito:</h2>
+        <ul id="carrito-contenido">
+            <!-- Aquí se mostrarán los productos con JS -->
+        </ul>
+        <h3>Total: <span id="total-carrito">S/ 0.00</span></h3>
+
+        <button onclick="vaciarCarrito()">🗑 Vaciar Carrito</button>
+    </section>
+
+    <script>
+        function vaciarCarrito() {
+            localStorage.removeItem("carrito");
+            carrito = [];
+            actualizarCarrito();
+        }
+    </script>
+
+</body>
+</html>
