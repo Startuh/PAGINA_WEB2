@@ -62,5 +62,5 @@ def agregar_al_carrito():
 import os
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))  # Render asigna un puerto dinámico
-    app.run(host="0.0.0.0", port=port, debug=False)  # Debug False para producción
+    port = int(os.environ.get("PORT", 5000))  # Railway asigna el puerto 5000
+    app.run(host="0.0.0.0", port=port, debug=False)
